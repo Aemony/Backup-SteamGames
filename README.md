@@ -12,7 +12,9 @@ This works great for me, but I am only one user with one use-case. I can't guara
 The script makes a full new copy of the install folder whenever a new build of the game is detected, meaning the storage requirement will run away quite quickly as running the script frequently will mean that X amount of copies of the game will be stored.
 
 ## Automatic backup
-Should be quite compatible with being run as a scheduled background task in Windows, if desired, although I haven't verified it myself.
+Is fully compatible with being run as a scheduled task in the background of Windows, providing either the default parameters of the script is configured appropriately, or the parameters are configured as a part of the run command of the task.
+
+I'm using `powershell.exe -ExecutionPolicy Bypass ".\Backup-SteamGames.ps1"` with the task configured to run the command in the `Backup-SteamGames` folder, and this works great.
 
 ## Installation
 Simply download the script to a location of your choice, open [Backup-SteamGames.ps1](Backup-SteamGames.ps1) and configure it appropriately under the **CONFIGURATION** section.
