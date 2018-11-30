@@ -119,7 +119,7 @@ function Copy-WithProgressBars
 	Write-Progress "Comparing source and destination folders..." -Activity "Processing '$Name'" -CurrentOperation "" -ErrorAction SilentlyContinue;
 	
 	# Copy the files over!
-	robocopy $Source $Destination /E /NDL /NJH /NJS | %{ $data = $_.Split([char]9); if ("$($data[4])" -ne "") { $file = "$($data[4])" }; Write-Progress "File percentage $($data[0])" -Activity "Processing '$Name'" -CurrentOperation "$($file)" ; }
+	robocopy $Source $Destination /E /NDL /NJH /NJS /XJD | %{ $data = $_.Split([char]9); if ("$($data[4])" -ne "") { $file = "$($data[4])" }; Write-Progress "File percentage $($data[0])" -Activity "Processing '$Name'" -CurrentOperation "$($file)" ; }
 }
 
 #----------------[ Main Execution ]----------------------------------------------------
